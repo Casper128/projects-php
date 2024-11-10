@@ -1,0 +1,15 @@
+{
+	"version": 2,
+	"routes": [ 
+		{ "src": "/(?<type>[^/]+)/(?<id>[^/]+)", "dest": "controllerUsers.php?resource_user=$type&resource_id=$id" },
+		{ "src": "/(?<type>[^/]+)(/)*", "dest": "controllerUsers.php?resource_user=$type" },
+		{ "src": "/(.*)", "dest": "server.php", "status": 404 }
+	],
+  "name": "platzi-rest-api",
+  "builds": [
+	{ 
+		"src": "*.php", 
+		"use": "@now/php" 
+	}
+  ]
+}
